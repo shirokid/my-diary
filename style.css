@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: white;
+  width: 100vw;
+  padding: 0;
+  background-color: black;
+}
+
+header {
+  background-color: #ff6a82;
+  padding: .25rem .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > * {
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 20px;
+  gap: .25rem;
+}
+
+header .profile {
+  gap: 1rem;
+}
+
+header .profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+
+.dropdown {
+  position: absolute;
+  min-width: 200px;
+  background-color: #111111;
+  padding: 5px;
+  top: 55px;
+  right: calc(.5rem + 10px);
+  display: none;
+  transition: display 500ms ease-in-out;
+}
+
+header .profile .account:hover .dropdown {
+  display: block;
+}
+
+.dropdown::before {
+  content: '';
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  position: absolute;
+  inset: -5px 2.5px auto auto;
+  rotate: 45deg;
+  background-color: #111111;
+}
+
+.dropdown .hr {
+  height: 1px;
+  background-color: grey;
+  margin-block: 20px;
+}
+
+.dropdown .colors {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dropdown .colors p {
+  font-size: 12px;
+  left: auto;
+}
+
+.dropdown .colors .color-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dropdown .colors .color-group [data-color] {
+  height: 25px;
+  width: 25px;
+}
+
+[data-color="yellow"] {
+  background-color: #ffd000;
+}
+
+[data-color="blue"] {
+  background-color: #00aeff;
+}
+
+[data-color="pink"] {
+  background-color: #ff6a82;
+}
+
+[data-color="green"] {
+  background-color: rgb(6, 211, 6);
+}
+
+[data-color].active {
+  border: 2px solid;
+}
+
+.dropdown .settings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
